@@ -1,38 +1,27 @@
 package vehicles;
 
-public class Car {
-    private String ownerName;
-    private String insuranceNumber;
-    protected String engineType;
+public class Car extends Vehicle {
 
-    public String getOwnerName() {
-        return ownerName;
+    @Override
+    public String vehicleType() {
+        return "Car";
     }
 
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
+
+    public Car(String model, String license, String color, Integer year, String ownerName, String insuranceNumber, String engineType) {
+        setModel(model);
+        setLicense(license);
+        setColor(color);
+        setYear(year);
+        setOwnerName(ownerName);
+        setInsuranceNumber(insuranceNumber);
+        setEngineType(engineType);
     }
 
-    public String getInsuranceNumber() {
-        return insuranceNumber;
+    public void ToString(){
+        String s = String.format("car1: %s %s %s %d %s %s %s\n", getModel(), getLicense(), getColor(), getYear(), getOwnerName(), getInsuranceNumber(), getEngineType());
+        System.out.println(s);
     }
 
-    public void setInsuranceNumber(String insuranceNumber) {
-        this.insuranceNumber = insuranceNumber;
-    }
-
-    public String getEngineType() {
-        return engineType;
-    }
-
-    public void setEngineType(String engineType) {
-        this.engineType = engineType;
-    }
-
-    public Car(String ownerName, String insuranceNumber, String engineType) {
-        this.ownerName = ownerName;
-        this.insuranceNumber = insuranceNumber;
-        this.engineType = engineType;
-    }
 
 }
